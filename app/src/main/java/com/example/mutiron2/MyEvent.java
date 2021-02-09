@@ -8,6 +8,6 @@ public class MyEvent extends AppCompatActivity {
 
     public int photo;
     public String title;
-    public String description; 
+    public String description;
 
 }

@@ -6,9 +6,8 @@ import android.os.Bundle;
 
 public class MyEvent extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_event);
-    }
+    public int photo;
+    public String title;
+    public String description;
+
 }

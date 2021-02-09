@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Mutiron2</string>
+    <string name="your_string_tag"> <b> your_text </b></string>
+</resources>

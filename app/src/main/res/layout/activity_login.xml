@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etUserLogin" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCadastrarLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -71,10 +71,10 @@
         app:layout_constraintBottom_toTopOf="@+id/tvInfoLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAvisoLogin" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnEntrarLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -85,13 +85,13 @@
         app:layout_constraintTop_toBottomOf="@+id/etPasswordLogin" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvAvisoLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
         android:text="@string/login_aviso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrarLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

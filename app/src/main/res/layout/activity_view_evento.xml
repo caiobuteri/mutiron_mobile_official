@@ -4,20 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventoDetalhes">
+    tools:context=".activity.ViewEventoActivity">
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="239dp"
-        android:layout_height="219dp"
+        android:id="@+id/imvPhotoView"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvTitleView"
         android:layout_width="0dp"
         android:layout_height="59dp"
         android:layout_marginStart="8dp"
@@ -25,73 +29,89 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Coleta de cobertores para moradores de rua"
-        android:textSize="24dp"
+        android:text="@string/evento_detalhes_title"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/imvPhotoView"
         tools:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvDescriptionView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Lorem ipsum risus condimentum cursus mollis semper mi sociosqu donec, etiam quam pulvinar luctus mi laoreet molestie varius, dapibus tincidunt vitae aenean sollicitudin augue fusce eleifend. velit donec pharetra curae auctor, senectus feugiat vestibulum dapibus vitae, nulla porttitor inceptos. viverra velit ultrices non arcu quisque massa aenean sodales sagittis, purus duis rhoncus felis id gravida vulputate nullam condimentum torquent, ante himenaeos dictum ligula at mollis massa tempor."
+        android:layout_marginBottom="8dp"
+        android:text="@string/evento_detalhes_description"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDateView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleView" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="138dp"
+        android:id="@+id/tvDateView"
+        android:layout_width="0dp"
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="12/04/2021"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        android:text="@string/evento_detalhes_data"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvLocationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvLocationView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Rua Santos Dumont, 315. Vitória - ES"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        android:text="@string/evento_detalhes_location"
+        app:layout_constraintBottom_toTopOf="@+id/cbLikedView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         tools:textSize="24sp" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/cbLikedView"
         android:layout_width="115dp"
         android:layout_height="66dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="8dp"
         android:button="@drawable/ic_baseline_favorite_border_24"
-        android:text="Gostei"
+        android:text="@string/evento_detalhes_checkbox"
         app:buttonTint="#E2003A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
-        app:layout_constraintStart_toStartOf="parent"
         tools:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnParticipateView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/evento_detalhes_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLocationView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

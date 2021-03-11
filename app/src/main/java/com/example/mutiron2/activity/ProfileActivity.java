@@ -1,10 +1,12 @@
-package com.example.mutiron2;
+package com.example.mutiron2.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Profile extends AppCompatActivity {
+import com.example.mutiron2.R;
+
+public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

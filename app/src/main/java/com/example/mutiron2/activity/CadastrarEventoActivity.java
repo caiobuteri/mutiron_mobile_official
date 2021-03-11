@@ -1,14 +1,16 @@
-package com.example.mutiron2;
+package com.example.mutiron2.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Login extends AppCompatActivity {
+import com.example.mutiron2.R;
+
+public class CadastrarEventoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_cadastrar_evento);
     }
 }

@@ -1,4 +1,38 @@
 <resources>
     <string name="app_name">Mutiron2</string>
     <string name="your_string_tag"> <b> your_text </b></string>
+
+    <string name="login_usuario">Usuário</string>
+    <string name="login_password">Password</string>
+    <string name="login_cadastrar">Cadastrar</string>
+    <string name="login_entrar">ENTRAR</string>
+    <string name="login_aviso">Ainda não tenho cadastro</string>
+    <string name="login_copywrite">Vitória - 2020</string>
+
+    <string name="cadastro_usuario">Usuário</string>
+    <string name="cadastro_password">Password</string>
+    <string name="cadastro_password_again">Password</string>
+    <string name="cadastro_button_cadastrar">Cadastrar</string>
+
+    <string name="title">Título</string>
+    <string name="Description">Descrição</string>
+    <string name="addevent">Adicionar Evento</string>
+    <string name="date">Data</string>
+    <string name="location">Localização</string>
+
+
+    <string name="evento_detalhes_title"><b>Coleta de cobertores para moradores de rua </b></string>
+    <string name="evento_detalhes_description">Este é um teste aqui estou testando um texto sobre um mutirao para ajuda na coleta de corbertores para moradores de rua da cidade de vitoria, no estado do espirito santo, em que há mais de 3000 pessoas em situação de desalojamento residencial, ou seja, vivendo nas ruas, e por esse motivo devemos nos solidarizar e ajudar conforme a nossa capacidade</string>
+    <string name="evento_detalhes_data">12/04/2021</string>
+    <string name="evento_detalhes_location">Rua Santos Dumont, 315. Vitória - ES</string>
+    <string name="evento_detalhes_button">Participar</string>
+    <string name="evento_detalhes_checkbox">Gostei</string>
+
+    <string name="my_event_Title"><b>Coleta de cobertores para moradores de rua </b></string>
+    <string name="my_event_Description">Este é um teste aqui estou testando um texto sobre um mutirao para ajuda na coleta de corbertores</string>
+
+    <string name="profile_name">Vinicius Lima</string>
+    <string name="profile_button_participando">Participando</string>
+    <string name="profile_button_curtidos">Curtidos</string>
+
 </resources>

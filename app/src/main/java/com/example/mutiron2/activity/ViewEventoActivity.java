@@ -1,14 +1,16 @@
-package com.example.mutiron2;
+package com.example.mutiron2.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Feed extends AppCompatActivity {
+import com.example.mutiron2.R;
+
+public class ViewEventoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feed);
+        setContentView(R.layout.activity_view_evento);
     }
 }

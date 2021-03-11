@@ -9,13 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mutiron2">
-        <activity android:name=".Profile"></activity>
-        <activity android:name=".EventoDetalhes" />
-        <activity android:name=".CadastrarEvento" />
+        <activity android:name=".activity.CadastrarUsuarioActivity"></activity>
+        <activity android:name=".activity.ProfileActivity" />
+        <activity android:name=".activity.ViewEventoActivity" />
+        <activity android:name=".activity.CadastrarEventoActivity" />
         <activity android:name=".MyEvent" />
-        <activity android:name=".Feed" />
-        <activity android:name=".Login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.ViewFeedActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

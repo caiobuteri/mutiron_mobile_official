@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import java.util.Date;
+
 public class MyEvent extends AppCompatActivity {
 
-    public int photo;
     public String title;
     public String description;
-
+    public Date data;
+    public String localizacao;
 }

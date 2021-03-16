@@ -12,7 +12,8 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@drawable/mutironlogo"
+        android:logo="@drawable/mutironlogo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mutiron2">
@@ -22,7 +23,8 @@
         <activity android:name=".activity.CadastrarEventoActivity" />
         <activity android:name=".MyEvent" />
         <activity android:name=".activity.ViewFeedActivity" />
-        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.LoginActivity"
+            android:theme="@style/Theme.Mutiron2.NoActionBar"/>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

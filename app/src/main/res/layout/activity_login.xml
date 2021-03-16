@@ -66,12 +66,11 @@
         android:id="@+id/btnCadastrarLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/login_cadastrar"
         app:layout_constraintBottom_toTopOf="@+id/tvInfoLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAvisoLogin" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnEntrarLogin"
@@ -88,8 +87,10 @@
         android:id="@+id/tvAvisoLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/login_aviso"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastrarLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEntrarLogin" />

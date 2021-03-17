@@ -11,7 +11,7 @@ public class Event extends AppCompatActivity {
     public String eid;
     public String title;
     public String description;
-    public Date data;
+    public String data;
     public String localizacao;
     public Bitmap photo;
 
@@ -20,6 +20,15 @@ public class Event extends AppCompatActivity {
         this.title = title;
         this.photo = photo;
     }
+
+    public Event(String title, String description, String data, String localizacao, Bitmap photo){
+        this.title = title;
+        this.description = description;
+        this.data = data;
+        this.localizacao = localizacao;
+        this.photo = photo;
+    }
+
 
 
     public String getTitle1() {
@@ -30,7 +39,7 @@ public class Event extends AppCompatActivity {
         return description;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 

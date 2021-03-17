@@ -1,13 +1,20 @@
 package com.example.mutiron2.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.mutiron2.Event;
 import com.example.mutiron2.R;
+import com.example.mutiron2.model.ViewEventoViewModel;
 
 public class ViewEventoActivity extends AppCompatActivity {
 
@@ -15,6 +22,33 @@ public class ViewEventoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_evento);
+
+        Intent i = getIntent();
+        String eid = i.getStringExtra("eid");
+
+        ViewEventoViewModel viewEventoViewModel = new ViewModelProvider(this, new ViewEventoViewModel.ViewEventoViewModelFactory(eid)).get(ViewEventoViewModel.class);
+
+        LiveData<Event> event = viewEventoViewModel.getEvent(); //observa os detalhes do produtos
+        event.observe(this, new Observer<Event>() {
+            @Override
+            public void onChanged(Event event) {
+                ImageView imvEventPhoto = findViewById(R.id.imvPhotoView);
+                imvEventPhoto.setImageBitmap(event.getPhoto());
+
+                TextView tvTitle = findViewById(R.id.tvTitleView);
+                tvTitle.setText(event.getTitle1());
+
+                TextView tvDate = findViewById(R.id.tvDateView);
+                tvDate.setText(event.getData());
+
+                TextView tvDescription = findViewById(R.id.tvDescriptionView);
+                tvDescription.setText(event.getDescription());
+
+                TextView tvLocation = findViewById(R.id.tvLocationView);
+                tvLocation.setText(event.getLocalizacao());
+            }
+        });
+
 
         Button btnParticipateView = findViewById(R.id.btnParticipateView);
         btnParticipateView.setOnClickListener(new View.OnClickListener() {

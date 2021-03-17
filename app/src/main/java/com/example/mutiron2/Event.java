@@ -15,6 +15,12 @@ public class Event extends AppCompatActivity {
     public String localizacao;
     public Bitmap photo;
 
+    public Event(String eid, String title, Bitmap photo){
+        this.eid = eid;
+        this.title = title;
+        this.photo = photo;
+    }
+
 
     public String getTitle1() {
         return title;

@@ -9,6 +9,7 @@
     <string name="login_aviso">Ainda não tenho cadastro</string>
     <string name="login_copywrite">Vitória - 2020</string>
 
+    <string name="cadastro_nome">Nome</string>
     <string name="cadastro_usuario">Usuário</string>
     <string name="cadastro_password">Password</string>
     <string name="cadastro_password_again">Password</string>

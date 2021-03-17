@@ -6,30 +6,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivityViewModel extends ViewModel {
-    List<MyEvent> eventos = new ArrayList<>();
+    List<Event> eventos = new ArrayList<>();
 
     public MainActivityViewModel() {
-        MyEvent evento1 = new MyEvent();
+        Event evento1 = new Event();
         evento1.title = "Gato";
         evento1.description = "Um felino capaz de saltar muito alto.";
         // evento1.photo = R.mipmap.gatinho;
 
-        MyEvent evento2 = new MyEvent();
+        Event evento2 = new Event();
         evento2.title = "Guepardo";
         evento2.description = "Um felino veloz e muito perigoso.";
         // evento2.photo = R.mipmap.gato;
 
-        MyEvent evento3 = new MyEvent();
+        Event evento3 = new Event();
         evento3.title = "Karol Conka";
         evento3.description = "Integrante do BBB21 que conquistou a raiva de muitas pessoas, as vezes também é conhecida por cobra.";
         // evento3.photo = R.mipmap.karolconka;
 
-        MyEvent evento4 = new MyEvent();
+        Event evento4 = new Event();
         evento4.title = "Passarinho";
         evento4.description = "Uma ave muito bonita que gosta de voar bem alto.";
         // evento4.photo = R.mipmap.passarinho;
 
-        MyEvent evento5 = new MyEvent();
+        Event evento5 = new Event();
         evento5.title = "Tartaruga";
         evento5.description = "Um animal muito lento e paciente. Se está com pressa, não ande atrás dele.";
         // evento5.photo = R.mipmap.tartaruga;
@@ -41,5 +41,5 @@ public class MainActivityViewModel extends ViewModel {
         eventos.add(evento5);
     }
 
-    public List<MyEvent> getEventos(){ return eventos; }
+    public List<Event> getEventos(){ return eventos; }
 }

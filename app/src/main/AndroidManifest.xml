@@ -2,29 +2,34 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mutiron2">
 
-    <uses-feature android:name="android.hardware.camera2" android:required="true"/>
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
     <uses-permission android:name="android.permission.INTERNET" />
-
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@drawable/mutironlogo"
-        android:logo="@drawable/mutironlogo"
+        android:label="Mutiron"
+        android:logo="@drawable/logo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mutiron2">
-        <activity android:name=".activity.CadastrarUsuarioActivity"></activity>
+        <activity android:name=".activity.GetDataActivity"></activity>
+        <activity android:name=".activity.CadastrarUsuarioActivity" />
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".activity.ViewEventoActivity" />
         <activity android:name=".activity.CadastrarEventoActivity" />
-        <activity android:name=".MyEvent" />
+        <activity android:name=".Event" />
         <activity android:name=".activity.ViewFeedActivity" />
-        <activity android:name=".activity.LoginActivity"
-            android:theme="@style/Theme.Mutiron2.NoActionBar"/>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/Theme.Mutiron2.NoActionBar" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

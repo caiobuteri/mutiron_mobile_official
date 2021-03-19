@@ -19,6 +19,10 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -62,7 +66,8 @@ public class ViewEventoViewModel extends ViewModel {
 
                         String title = jEvent.getString("title");
                         String description = jEvent.getString("description");
-                        String date = jEvent.getString("date");
+                        String date = jEvent.getString("date"); //peguei a string "dd/mm/yyyy"
+                        Date data = new SimpleDateFormat("dd/MM/yyyy").parse(date); //passar no formato date
                         String location = jEvent.getString("location");
 
 
@@ -70,12 +75,12 @@ public class ViewEventoViewModel extends ViewModel {
                         String pureBase64Encoded = imgBase64.substring((imgBase64.indexOf(",") + 1));
                         Bitmap img = Util.base642Bitmap(pureBase64Encoded);
 
-                        Event e = new Event(title, description, date, location,img);
+                        Event e = new Event(title, description, data, location,img);
 
                         event.postValue(e);
 
                     }
-                } catch (IOException | JSONException e) {
+                } catch (IOException | JSONException | ParseException e) {
                     e.printStackTrace();
                 }
             }

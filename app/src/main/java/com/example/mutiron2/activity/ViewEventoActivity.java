@@ -16,6 +16,8 @@ import com.example.mutiron2.Event;
 import com.example.mutiron2.R;
 import com.example.mutiron2.model.ViewEventoViewModel;
 
+import java.text.SimpleDateFormat;
+
 public class ViewEventoActivity extends AppCompatActivity {
 
     @Override
@@ -39,7 +41,8 @@ public class ViewEventoActivity extends AppCompatActivity {
                 tvTitle.setText(event.getTitle1());
 
                 TextView tvDate = findViewById(R.id.tvDateView);
-                tvDate.setText(event.getData());
+                tvDate.setText(new SimpleDateFormat("HH:mm dd/MM/yyyy").format(event.getDate()));
+                //tvDate.setText(event.getData());
 
                 TextView tvDescription = findViewById(R.id.tvDescriptionView);
                 tvDescription.setText(event.getDescription());

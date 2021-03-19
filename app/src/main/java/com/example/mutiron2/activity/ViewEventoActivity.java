@@ -7,16 +7,27 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mutiron2.Event;
 import com.example.mutiron2.R;
 import com.example.mutiron2.model.ViewEventoViewModel;
+import com.example.mutiron2.util.HttpRequest;
+import com.example.mutiron2.util.Util;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ViewEventoActivity extends AppCompatActivity {
 
@@ -59,6 +70,44 @@ public class ViewEventoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //mandar pra lista de participando no profile dessa pessoa
                 //mandar um toast falando que ja ta participando
+                ExecutorService executorService = Executors.newSingleThreadExecutor();
+                executorService.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        HttpRequest httpRequest = new HttpRequest("productifes.herokuapp.com/add_participate_list", "POST", "UTF-8");
+                        httpRequest.addParam("p_eid", eid);
+
+                        try {
+                            InputStream is = httpRequest.execute();
+                            String result = Util.inputStream2String(is, "UTF-8");
+                            httpRequest.finish();
+
+                            Log.d("HTTP_REQUEST_RESULT", result);
+
+                            JSONObject jsonObject = new JSONObject(result); //objeto tipo Json
+                            int success = jsonObject.getInt("success");
+                            runOnUiThread(new Runnable() { //thread da interface para evitar de matar a aplicação
+                                @Override
+                                public void run() {
+                                    if(success == 1){ //se o objeto foi adicionado com sucesso
+                                        Log.d("teste 1", "deu success");
+                                        Toast.makeText(ViewEventoActivity.this, "Evento foi Participado com sucesso", Toast.LENGTH_LONG).show();
+                                        setResult(RESULT_OK);
+                                        finish();
+                                    }
+                                    else{
+                                        Log.d("teste 1", "não deu success");
+                                        Toast.makeText(ViewEventoActivity.this, "Evento não foi Participado com sucesso", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+                            Log.d("teste 2", "não entrou essa");
+
+                        } catch (IOException | JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
                 Intent i = new Intent(ViewEventoActivity.this, ViewFeedActivity.class);
                 startActivity(i);
             }
@@ -68,8 +117,46 @@ public class ViewEventoActivity extends AppCompatActivity {
         cbLikedView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //mandar pra lista de Curtidos no profile dessa pessoa
-                //mandar um toast falando que ja ta curtindo
+                //mandar pra lista de participando no profile dessa pessoa
+                //mandar um toast falando que ja ta participando
+                ExecutorService executorService = Executors.newSingleThreadExecutor();
+                executorService.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        HttpRequest httpRequest = new HttpRequest("productifes.herokuapp.com/add_Liked_list", "POST", "UTF-8");
+                        httpRequest.addParam("L_eid", eid);
+
+                        try {
+                            InputStream is = httpRequest.execute();
+                            String result = Util.inputStream2String(is, "UTF-8");
+                            httpRequest.finish();
+
+                            Log.d("HTTP_REQUEST_RESULT", result);
+
+                            JSONObject jsonObject = new JSONObject(result); //objeto tipo Json
+                            int success = jsonObject.getInt("success");
+                            runOnUiThread(new Runnable() { //thread da interface para evitar de matar a aplicação
+                                @Override
+                                public void run() {
+                                    if(success == 1){ //se o objeto foi adicionado com sucesso
+                                        Log.d("teste 1", "deu success");
+                                        Toast.makeText(ViewEventoActivity.this, "Evento foi Curtido com sucesso", Toast.LENGTH_LONG).show();
+                                        setResult(RESULT_OK);
+                                        finish();
+                                    }
+                                    else{
+                                        Log.d("teste 1", "não deu success");
+                                        Toast.makeText(ViewEventoActivity.this, "Evento não foi Não foi com sucesso", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+                            Log.d("teste 2", "não entrou essa");
+
+                        } catch (IOException | JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
                 Intent i = new Intent(ViewEventoActivity.this, ViewFeedActivity.class);
                 startActivity(i);
             }

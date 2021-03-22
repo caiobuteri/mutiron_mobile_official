@@ -51,11 +51,11 @@ public class ProfileViewModel extends ViewModel {
                         for(int i = 0; i < jsonArray.length(); i++){ //inicio da construção de uma lista de produtos
                             JSONObject jEvent = jsonArray.getJSONObject(i); //identifica um produto com um JsonObject
 
-                            String eid = jEvent.getString("pid"); //Pega o pid desse produto do json
+                            String eid = jEvent.getString("eid"); //Pega o pid desse produto do json
                             String title = jEvent.getString("title"); //pega o nome desse produto do json
                             String img = jEvent.getString("img");
 
-                            Bitmap photo = Util.getBitmap(img, 100, 100);
+                            Bitmap photo = Util.base642Bitmap(img);
 
                             Event event = new Event(eid, title, photo); //cria um novo produto
                             eventsList.add(event); //adiciona esse produto nessa lista de produtos
@@ -91,7 +91,7 @@ public class ProfileViewModel extends ViewModel {
                         for(int i = 0; i < jsonArray.length(); i++){ //inicio da construção de uma lista de produtos
                             JSONObject jEvent = jsonArray.getJSONObject(i); //identifica um produto com um JsonObject
 
-                            String eid = jEvent.getString("pid"); //Pega o pid desse produto do json
+                            String eid = jEvent.getString("eid"); //Pega o pid desse produto do json
                             String title = jEvent.getString("title"); //pega o nome desse produto do json
                             String img = jEvent.getString("img");
 

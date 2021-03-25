@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,20 +42,22 @@ public class LoginActivity extends AppCompatActivity {
                 final String password = etPassword.getText().toString();
 
 
-
+                Log.d("Teste", "Aqui foi");
                 ExecutorService executorService = Executors.newSingleThreadExecutor();
                 executorService.execute(new Runnable() {
                     @Override
                     public void run() {
-                        HttpRequest httpRequest = new HttpRequest( "https://loginwebifes.herokuapp.com/login.php", "POST", "UTF-8");
+                        HttpRequest httpRequest = new HttpRequest( "https://mutiron.herokuapp.com/loginMobile", "POST", "UTF-8");
                         httpRequest.addParam("login", login);
                         httpRequest.addParam("password", password);
+                        Log.d("Teste", "Aqui foi 2");
 
                         try {
                             InputStream is = httpRequest.execute();
                             String result = Util.inputStream2String(is, "UTF-8");
                             httpRequest.finish();
-
+                            Log.d("Teste", result);
+                            Log.d("Teste", "resultado");
                             JSONObject jsonObject = new JSONObject(result);
                             final int success = jsonObject.getInt("success");
                             if(success == 1) {

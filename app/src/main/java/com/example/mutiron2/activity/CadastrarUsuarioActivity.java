@@ -55,12 +55,12 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                     return;
                 }
 
-                EditText etName =  findViewById(R.id.etNameCadastro);
+                /*EditText etName =  findViewById(R.id.etNameCadastro);
                 String newName = etNewPasswordCheck.getText().toString();
                 if(newName.isEmpty()) {
                     Toast.makeText(CadastrarUsuarioActivity.this, "Campo de Nome não preenchido", Toast.LENGTH_LONG).show();
                     return;
-                }
+                }*/
 
                 if(!newPassword.equals(newPasswordCheck)) {
                     Toast.makeText(CadastrarUsuarioActivity.this, "Senha não confere", Toast.LENGTH_LONG).show();
@@ -71,9 +71,9 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                 executorService.execute(new Runnable() {
                     @Override
                     public void run() {//alterar o endereço daqui tambem
-                        HttpRequest httpRequest = new HttpRequest("https://loginwebifes.herokuapp.com/register.php", "POST", "UTF-8");
-                        httpRequest.addParam("newLogin", newLogin);
-                        httpRequest.addParam("newPassword", newPassword);
+                        HttpRequest httpRequest = new HttpRequest("https://mutiron.herokuapp.com/cadastroMobile", "POST", "UTF-8");
+                        httpRequest.addParam("login", newLogin);
+                        httpRequest.addParam("password", newPassword);
 
                         try {
                             InputStream is = httpRequest.execute();

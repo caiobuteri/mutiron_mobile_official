@@ -47,7 +47,10 @@ public class LoginActivity extends AppCompatActivity {
                 executorService.execute(new Runnable() {
                     @Override
                     public void run() {
+                        Log.d("Teste", "Chegou carai");
                         HttpRequest httpRequest = new HttpRequest( "https://mutiron.herokuapp.com/loginMobile", "POST", "UTF-8");
+                        Log.d("login", login);
+                        Log.d("password", password);
                         httpRequest.addParam("login", login);
                         httpRequest.addParam("password", password);
                         Log.d("Teste", "Aqui foi 2");
@@ -56,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                             InputStream is = httpRequest.execute();
                             String result = Util.inputStream2String(is, "UTF-8");
                             httpRequest.finish();
-                            Log.d("Teste", result);
+                            Log.d("Teste", "result = " + result );
                             Log.d("Teste", "resultado");
                             JSONObject jsonObject = new JSONObject(result);
                             final int success = jsonObject.getInt("success");

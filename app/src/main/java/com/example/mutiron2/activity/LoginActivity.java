@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Log.d("Teste", "Chegou carai");
-                        HttpRequest httpRequest = new HttpRequest( "https://mutiron.herokuapp.com/loginMobile", "POST", "UTF-8");
+                        HttpRequest httpRequest = new HttpRequest( "https://mutiron.herokuapp.com/mobile/loginMobile", "POST", "UTF-8");
                         Log.d("login", login);
                         Log.d("password", password);
                         httpRequest.addParam("login", login);
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                                         Config.setLogin(LoginActivity.this, login);
                                         Config.setPassword(LoginActivity.this, password);
                                         Toast.makeText(LoginActivity.this, "Login realizado com sucesso", Toast.LENGTH_LONG).show();
-                                        Intent i = new Intent(LoginActivity.this, GetDataActivity.class);
+                                        Intent i = new Intent(LoginActivity.this, ViewFeedActivity.class);
                                         startActivity(i);
                                     }
                                 });

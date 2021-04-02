@@ -24,9 +24,9 @@ public class MyAdapter extends RecyclerView.Adapter {
     Context context;
     List<Event> events;
 
-    public MyAdapter(Context context, List<Event> products) {
+    public MyAdapter(Context context, List<Event> events) {
         this.context = context;
-        this.events = products;
+        this.events = events;
     }
 
     @NonNull
@@ -49,7 +49,9 @@ public class MyAdapter extends RecyclerView.Adapter {
         tvDescriptionList.setText(event.getDescription());
 
         ImageView imageView = holder.itemView.findViewById(R.id.imvPhotoList);
-        imageView.setImageBitmap(event.getPhoto());
+        // imageView.setImageBitmap(event.getPhoto());
+
+        imageView.setImageResource(R.mipmap.tartaruga);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() { //quando clicar
             @Override

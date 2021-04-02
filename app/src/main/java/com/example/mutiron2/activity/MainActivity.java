@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         else {
-            Intent i = new Intent(MainActivity.this, GetDataActivity.class);
+            Intent i = new Intent(MainActivity.this, ViewFeedActivity.class);
             startActivity(i);
             finish();
         }

@@ -31,6 +31,7 @@ import com.example.mutiron2.Event;
 import com.example.mutiron2.adapter.MyAdapter;
 import com.example.mutiron2.R;
 import com.example.mutiron2.model.ViewFeedViewModel;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
 import java.io.IOException;
@@ -67,7 +68,7 @@ public class ViewFeedActivity extends AppCompatActivity {
         });
 
 
-        Button btnAddEventFeed = findViewById(R.id.btnAddEventFeed);
+        FloatingActionButton btnAddEventFeed = findViewById(R.id.btnAddEventFeed);
         btnAddEventFeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

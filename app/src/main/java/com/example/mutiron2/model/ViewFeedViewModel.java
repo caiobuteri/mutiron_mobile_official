@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.mutiron2.Event;
+import com.example.mutiron2.R;
 import com.example.mutiron2.util.HttpRequest;
 import com.example.mutiron2.util.Util;
 
@@ -46,7 +47,7 @@ public class ViewFeedViewModel extends ViewModel {
             public void run() {
 
                 List<Event> eventsList = new ArrayList<>();
-                HttpRequest httpRequest = new HttpRequest("https://productifes.herokuapp.com/get_all_products.php", "GET", "UTF-8");
+                HttpRequest httpRequest = new HttpRequest("https://mutiron.herokuapp.com/mobile/retornaEventos", "GET", "UTF-8");
                 try { //tratamento de execeção
                     InputStream is = httpRequest.execute();//executa essa requisição
                     String result = Util.inputStream2String(is, "UTF-8");
@@ -57,17 +58,20 @@ public class ViewFeedViewModel extends ViewModel {
                     JSONObject jsonObject = new JSONObject(result); //objeto tipo Json
                     int success = jsonObject.getInt("success");
                     if(success == 1){
-                        JSONArray jsonArray = jsonObject.getJSONArray("events");
+                        JSONArray jsonArray = jsonObject.getJSONArray("eventos");
                         for(int i = 0; i < jsonArray.length(); i++){ //inicio da construção de uma lista de produtos
                             JSONObject jEvent = jsonArray.getJSONObject(i); //identifica um produto com um JsonObject
 
-                            String eid = jEvent.getString("pid"); //Pega o pid desse produto do json
-                            String title = jEvent.getString("title"); //pega o nome desse produto do json
-                            String img = jEvent.getString("img");
+                            String id_evento = jEvent.getString("id_evento"); //Pega o pid desse produto do json
+                            String title = jEvent.getString("titulo"); //pega o nome desse produto do json
+                            String descricao = jEvent.getString("descricao");
+                            /*String data = jEvent.getString("img");
+                            String localizacao = jEvent.getString("img");
+                            String id_criador = jEvent.getString("img");*/
 
-                            Bitmap photo = Util.getBitmap(img, 100, 100);
+                            // Bitmap photo = Util.getBitmap(img, 100, 100);
 
-                            Event event = new Event(eid, title, photo); //cria um novo produto
+                            Event event = new Event(id_evento, title, descricao); //cria um novo produto
                             eventsList.add(event); //adiciona esse produto nessa lista de produtos
                         }
                         events.postValue(eventsList); //atualiza essa nova lista de produtos no mutable liveData

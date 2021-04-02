@@ -71,7 +71,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                 executorService.execute(new Runnable() {
                     @Override
                     public void run() {//alterar o endereço daqui tambem
-                        HttpRequest httpRequest = new HttpRequest("https://mutiron.herokuapp.com/cadastroMobile", "POST", "UTF-8");
+                        HttpRequest httpRequest = new HttpRequest("https://mutiron.herokuapp.com/mobile/cadastroMobile", "POST", "UTF-8");
                         httpRequest.addParam("login", newLogin);
                         httpRequest.addParam("password", newPassword);
 

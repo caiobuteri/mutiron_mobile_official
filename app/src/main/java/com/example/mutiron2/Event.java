@@ -1,13 +1,10 @@
 package com.example.mutiron2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Bitmap;
-import android.os.Bundle;
 
 import java.util.Date;
 
-public class Event extends AppCompatActivity {
+public class Event {
     public String eid;
     public String title;
     public String description;
@@ -19,6 +16,12 @@ public class Event extends AppCompatActivity {
         this.eid = eid;
         this.title = title;
         this.photo = photo;
+    }
+
+    public Event(String id_evento, String title, String descricao){
+        this.eid = id_evento;
+        this.title = title;
+        this.description = descricao;
     }
 
     public Event(String title, String description, Date date, String localizacao, Bitmap photo){
@@ -54,4 +57,5 @@ public class Event extends AppCompatActivity {
     public Bitmap getPhoto() {
         return photo;
     }
+
 }

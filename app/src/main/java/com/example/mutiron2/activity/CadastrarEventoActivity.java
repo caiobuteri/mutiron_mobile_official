@@ -92,13 +92,14 @@ public class CadastrarEventoActivity extends AppCompatActivity {
                 executorService.execute(new Runnable() {
                     @Override
                     public void run() { //tem que mudar esse endereço ai
-                        HttpRequest httpRequest = new HttpRequest("https://productifes.herokuapp.com/create_product.php", "POST", "UTF-8");
+                        HttpRequest httpRequest = new HttpRequest("https://mutiron.herokuapp.com/create_product.php", "POST", "UTF-8");
 
                         httpRequest.addParam("title", title);
                         httpRequest.addParam("location", location);
                         httpRequest.addParam("date", date);
                         httpRequest.addParam("description", description);
-                        httpRequest.addFile("img", new File(currentPhotoPath));
+                        httpRequest.addParam("description", description);
+                        // httpRequest.addFile("img", new File(currentPhotoPath));
 
                         try {
                             InputStream is = httpRequest.execute();

@@ -95,7 +95,7 @@ public class CadastrarEventoActivity extends AppCompatActivity {
                 executorService.execute(new Runnable() {
                     @Override
                     public void run() { //tem que mudar esse endereço ai
-                        HttpRequest httpRequest = new HttpRequest("https://mutiron.herokuapp.com/Mobile/CadastroEventoMobile", "POST", "UTF-8");
+                        HttpRequest httpRequest = new HttpRequest("https://mutiron.herokuapp.com/mobile/insereEventoMobile", "POST", "UTF-8");
 
                         httpRequest.addParam("title", title);
                         httpRequest.addParam("location", location);

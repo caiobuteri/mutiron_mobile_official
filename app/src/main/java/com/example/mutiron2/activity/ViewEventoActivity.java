@@ -85,7 +85,7 @@ public class ViewEventoActivity extends AppCompatActivity {
                     executorService.execute(new Runnable() {
                         @Override
                         public void run() {
-                            HttpRequest httpRequest = new HttpRequest("productifes.herokuapp.com/add_participate_list", "POST", "UTF-8");
+                            HttpRequest httpRequest = new HttpRequest("mutiron.herokuapp.com/mobile/eventodetalhado", "POST", "UTF-8");
                             httpRequest.addParam("p_eid", eid);
 
                             try {

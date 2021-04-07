@@ -29,7 +29,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_usuario);
 
-        final String creator = Config.getLogin(this);
+     //   final String login_usuario = Config.getLogin(this);
 
         Button btnCadastrarCadastro = findViewById(R.id.btnCadastrarCadastro);
         btnCadastrarCadastro.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +80,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                         httpRequest.addParam("login", newLogin);
                         httpRequest.addParam("password", newPassword);
 
-                        httpRequest.addParam("criador", creator); //manda pro servidor o quem foi o criador
+                      //  httpRequest.addParam("criador", creator); //manda pro servidor o quem foi o criador
 
                         try {
                             InputStream is = httpRequest.execute();

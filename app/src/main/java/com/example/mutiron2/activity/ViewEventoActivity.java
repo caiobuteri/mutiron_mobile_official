@@ -42,7 +42,7 @@ public class ViewEventoActivity extends AppCompatActivity {
         String eid = i.getStringExtra("eid");
 
 
-        final String id_usuario = Config.getLogin(this);
+        final String login_usuario = Config.getLogin(this);
          String criador = ""; // preciso mudar o getEvent() adicionar pra pegar o criador
 
         ViewEventoViewModel viewEventoViewModel = new ViewModelProvider(this, new ViewEventoViewModel.ViewEventoViewModelFactory(eid)).get(ViewEventoViewModel.class);
@@ -72,7 +72,7 @@ public class ViewEventoActivity extends AppCompatActivity {
         criador = event.getValue().criador; //falta colocar que quando cadastra o evento pega o login da pessoa
 
 
-        if(!id_usuario.equals(criador)){
+        if(!login_usuario.equals(criador)){
 
 
             Button btnParticipateView = findViewById(R.id.btnParticipateView);

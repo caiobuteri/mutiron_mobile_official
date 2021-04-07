@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.mutiron2.R;
 import com.example.mutiron2.model.CadastrarEventoViewModel;
+import com.example.mutiron2.util.Config;
 import com.example.mutiron2.util.HttpRequest;
 import com.example.mutiron2.util.Util;
 
@@ -41,6 +42,8 @@ public class CadastrarEventoActivity extends AppCompatActivity {
             Bitmap bitmap = Util.getBitmap(currentPhotoPath, imvPhoto.getWidth(), imvPhoto.getHeight());
             imvPhoto.setImageBitmap(bitmap);
         }
+
+        final String criador = Config.getLogin(this);
 
 
         Button btnAddEventAdd = findViewById(R.id.btnAddEventAdd);
@@ -92,13 +95,13 @@ public class CadastrarEventoActivity extends AppCompatActivity {
                 executorService.execute(new Runnable() {
                     @Override
                     public void run() { //tem que mudar esse endereço ai
-                        HttpRequest httpRequest = new HttpRequest("https://mutiron.herokuapp.com/create_product.php", "POST", "UTF-8");
+                        HttpRequest httpRequest = new HttpRequest("https://mutiron.herokuapp.com/Mobile/CadastroEventoMobile", "POST", "UTF-8");
 
                         httpRequest.addParam("title", title);
                         httpRequest.addParam("location", location);
                         httpRequest.addParam("date", date);
                         httpRequest.addParam("description", description);
-                        httpRequest.addParam("description", description);
+                        httpRequest.addParam("criador", criador); // mudei agora caio
                         // httpRequest.addFile("img", new File(currentPhotoPath));
 
                         try {

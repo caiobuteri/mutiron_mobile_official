@@ -69,13 +69,14 @@ public class ViewEventoViewModel extends ViewModel {
                         String date = jEvent.getString("date"); //peguei a string "dd/mm/yyyy"
                         Date data = new SimpleDateFormat("dd/MM/yyyy").parse(date); //passar no formato date
                         String location = jEvent.getString("location");
+                        String criador = jEvent.getString("criador");
 
 
                         String imgBase64 = jEvent.getString("img");
                         String pureBase64Encoded = imgBase64.substring((imgBase64.indexOf(",") + 1));
                         Bitmap img = Util.base642Bitmap(pureBase64Encoded);
 
-                        Event e = new Event(title, description, data, location,img);
+                        Event e = new Event(title, description, data, location,img, criador);
 
                         event.postValue(e);
 

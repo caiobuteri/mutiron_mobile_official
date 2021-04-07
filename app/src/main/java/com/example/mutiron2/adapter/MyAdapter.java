@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mutiron2.Event;
 import com.example.mutiron2.R;
+import com.example.mutiron2.activity.ViewEventoActivity;
 import com.example.mutiron2.activity.ViewFeedActivity;
 import com.example.mutiron2.model.MyViewHolder;
 
@@ -51,12 +52,12 @@ public class MyAdapter extends RecyclerView.Adapter {
         ImageView imageView = holder.itemView.findViewById(R.id.imvPhotoList);
         // imageView.setImageBitmap(event.getPhoto());
 
-        imageView.setImageResource(R.mipmap.tartaruga);
+        imageView.setImageResource(R.drawable.tartaruga);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() { //quando clicar
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, ViewFeedActivity.class); //mover de tela
+                Intent i = new Intent(context, ViewEventoActivity.class); //mover de tela
                 i.putExtra("eid", event.getEid()); //devo adicionar um id pro evento
                 context.startActivity(i);
             }

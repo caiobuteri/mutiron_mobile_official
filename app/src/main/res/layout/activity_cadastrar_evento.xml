@@ -33,9 +33,9 @@
         android:hint="@string/title"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etLocationAdd" />
+        app:layout_constraintTop_toBottomOf="@+id/imvPhotoAdd" />
 
     <EditText
         android:id="@+id/etDescriptionAdd"
@@ -51,7 +51,7 @@
         android:gravity="start|top"
         android:hint="@string/Description"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/btnAddEventAdd"
+        app:layout_constraintBottom_toTopOf="@+id/etLocationAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,15 +71,22 @@
 
     <EditText
         android:id="@+id/etDateAdd"
-        android:layout_width="114dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="@string/date"
         android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddEventAdd"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imvPhotoAdd" />
+        app:layout_constraintTop_toBottomOf="@+id/etLocationAdd" />
 
     <EditText
         android:id="@+id/etLocationAdd"
@@ -87,14 +94,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="@string/location"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddEventAdd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDateAdd" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

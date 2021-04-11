@@ -25,6 +25,8 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -43,7 +45,7 @@ public class CadastrarEventoActivity extends AppCompatActivity {
             imvPhoto.setImageBitmap(bitmap);
         }
 
-        final String criador = Config.getLogin(this);
+        final Integer criador = Config.getUserId(this);
 
 
         Button btnAddEventAdd = findViewById(R.id.btnAddEventAdd);
@@ -76,7 +78,7 @@ public class CadastrarEventoActivity extends AppCompatActivity {
                 }
 
                 EditText etDate = findViewById(R.id.etDateAdd);
-                String date = etDescription.getText().toString();
+                String date = etDate.getText().toString();
                 if(date.isEmpty()){
                     Toast.makeText(CadastrarEventoActivity.this, "O Campo Data não foi preenchido", Toast.LENGTH_LONG).show();
                     v.setEnabled(true);
@@ -84,12 +86,12 @@ public class CadastrarEventoActivity extends AppCompatActivity {
                 }
 
 
-                String currentPhotoPath = cadastrarEventoViewModel.getCurrentPhotoPath();
+                /*String currentPhotoPath = cadastrarEventoViewModel.getCurrentPhotoPath();
                 if(currentPhotoPath.isEmpty()){
                     Toast.makeText(CadastrarEventoActivity.this, "O Campo FOTO não foi preenchido", Toast.LENGTH_LONG).show();
                     v.setEnabled(true);
                     return;
-                }
+                }*/
 
                 ExecutorService executorService = Executors.newSingleThreadExecutor();
                 executorService.execute(new Runnable() {
@@ -98,10 +100,10 @@ public class CadastrarEventoActivity extends AppCompatActivity {
                         HttpRequest httpRequest = new HttpRequest("https://mutiron.herokuapp.com/mobile/insereEventoMobile", "POST", "UTF-8");
 
                         httpRequest.addParam("title", title);
-                        httpRequest.addParam("location", location);
+                        httpRequest.addParam("location", description);
                         httpRequest.addParam("date", date);
-                        httpRequest.addParam("description", description);
-                        httpRequest.addParam("criador", criador); // mudei agora caio
+                        httpRequest.addParam("description", location);
+                        httpRequest.addParam("criador", criador.toString()); // mudei agora caio
                         // httpRequest.addFile("img", new File(currentPhotoPath));
 
                         try {

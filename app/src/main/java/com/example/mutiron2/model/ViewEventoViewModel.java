@@ -69,7 +69,7 @@ public class ViewEventoViewModel extends ViewModel {
                         String date = jEvent.getString("date"); //peguei a string "dd/mm/yyyy"
                         Date data = new SimpleDateFormat("dd/MM/yyyy").parse(date); //passar no formato date
                         String location = jEvent.getString("location");
-                        String criador = jEvent.getString("criador");
+                        Integer criador = jEvent.getInt("criador");
 
 
                         String imgBase64 = jEvent.getString("img");

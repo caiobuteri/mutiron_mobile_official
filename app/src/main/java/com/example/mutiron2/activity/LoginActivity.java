@@ -63,10 +63,12 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d("Teste", "resultado");
                             JSONObject jsonObject = new JSONObject(result);
                             final int success = jsonObject.getInt("success");
+                            final int id = jsonObject.getInt("id");
                             if(success == 1) {
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
+                                        Config.setUserId(LoginActivity.this, id);
                                         Config.setLogin(LoginActivity.this, login);
                                         Config.setPassword(LoginActivity.this, password);
                                         Toast.makeText(LoginActivity.this, "Login realizado com sucesso", Toast.LENGTH_LONG).show();

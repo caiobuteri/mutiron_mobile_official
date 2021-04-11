@@ -28,5 +28,16 @@ public class Config {
         SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);
         return mPrefs.getString("password", "");
     }
+
+    public static void setUserId(Context context, Integer id) {
+        SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);
+        SharedPreferences.Editor mEditor = mPrefs.edit();
+        mEditor.putInt("id", id).commit();
+    }
+
+    public static Integer getUserId(Context context) {
+        SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);
+        return mPrefs.getInt("id", 0);
+    }
 }
 

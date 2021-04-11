@@ -43,7 +43,8 @@ public class ViewEventoActivity extends AppCompatActivity {
 
 
         final String login_usuario = Config.getLogin(this);
-         String criador = ""; // preciso mudar o getEvent() adicionar pra pegar o criador
+        final Integer id = Config.getUserId(this); //falta colocar que quando cadastra o evento pega o login da pessoa
+        Integer criador; // preciso mudar o getEvent() adicionar pra pegar o criador
 
         ViewEventoViewModel viewEventoViewModel = new ViewModelProvider(this, new ViewEventoViewModel.ViewEventoViewModelFactory(eid)).get(ViewEventoViewModel.class);
 
@@ -69,10 +70,10 @@ public class ViewEventoActivity extends AppCompatActivity {
 
             }
         });
-        criador = event.getValue().criador; //falta colocar que quando cadastra o evento pega o login da pessoa
+        criador = event.getValue().getCriador(); //falta colocar que quando cadastra o evento pega o login da pessoa
 
 
-        if(!login_usuario.equals(criador)){
+        if(criador == id){
 
 
             Button btnParticipateView = findViewById(R.id.btnParticipateView);
@@ -85,7 +86,7 @@ public class ViewEventoActivity extends AppCompatActivity {
                     executorService.execute(new Runnable() {
                         @Override
                         public void run() {
-                            HttpRequest httpRequest = new HttpRequest("mutiron.herokuapp.com/mobile/eventodetalhado", "POST", "UTF-8");
+                            HttpRequest httpRequest = new HttpRequest("mutiron.herokuapp.com/mobile/retornaEventoDetalhes", "POST", "UTF-8");
                             httpRequest.addParam("p_eid", eid);
 
                             try {

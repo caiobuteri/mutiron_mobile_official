@@ -11,7 +11,7 @@ public class Event {
     public Date date;
     public String localizacao;
     public Bitmap photo;
-    public String criador;
+    public Integer criador;
 
     public Event(String eid, String title, Bitmap photo){
         this.eid = eid;
@@ -25,7 +25,7 @@ public class Event {
         this.description = descricao;
     }
 
-    public Event(String title, String description, Date date, String localizacao, Bitmap photo, String criador){
+    public Event(String title, String description, Date date, String localizacao, Bitmap photo, Integer criador){
         this.title = title;
         this.description = description;
         this.date = date;
@@ -60,7 +60,7 @@ public class Event {
         return photo;
     }
 
-    public String getCriador() {
+    public Integer getCriador() {
         return criador;
     }
 }
